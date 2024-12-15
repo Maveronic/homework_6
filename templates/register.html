@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+</head>
+<body>
+    <h1>Register User</h1>
+
+    <!-- Display success or error messages -->
+    {% if message %}
+        <p style="color: {% if success %}green{% else %}red{% endif %};">
+            {{ message }}
+        </p>
+    {% endif %}
+
+    <!-- Registration Form -->
+    <form method="POST" action="/register">
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" name="age" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" required><br><br>
+
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
